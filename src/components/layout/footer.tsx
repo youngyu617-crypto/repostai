@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { APP_NAME } from "@/lib/constants";
 
 export function Footer() {
@@ -7,9 +8,17 @@ export function Footer() {
         <p className="text-xs text-muted-foreground">
           &copy; {new Date().getFullYear()} {APP_NAME}
         </p>
-        <p className="text-xs text-muted-foreground">
-          Made with &hearts; for creators
-        </p>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/privacy"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Privacy Policy
+          </Link>
+          <p className="text-xs text-muted-foreground">
+            Made with &hearts; for creators
+          </p>
+        </div>
       </div>
     </footer>
   );
